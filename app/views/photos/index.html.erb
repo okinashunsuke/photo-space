@@ -1,1 +1,12 @@
-<h1>toppo</h1>
+<main class="main">
+  <div class="inner">
+    <%if user_signed_in? %>
+      <div class="greeting">
+       <%= "こんにちは、#{current_user.name}さん" %>  
+      </div>
+     <%end%>
+    <div class="card__wrapper">
+
+    </div>
+  </div>
+</main>
