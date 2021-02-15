@@ -2,11 +2,11 @@
   <div class="inner">
     <%if user_signed_in? %>
       <div class="greeting">
-       <%= "こんにちは、#{current_user.name}さん" %>  
+       <%= link_to "こんにちは、#{current_user.name}さん", user_path(current_user) , class: :greeting__link%> 
       </div>
-     <%end%>
+     <% end %>
     <div class="card__wrapper">
-
+      <%= render partial: 'photo', collection: @photos %>
     </div>
   </div>
 </main>

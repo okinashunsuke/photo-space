@@ -1,0 +1,50 @@
+<main class="main">
+  <div class="inner">
+    <div class="photo__wrapper">
+      <p class="photo__hedding">
+        <%= @photo.title%>
+      </p>
+      <%= link_to "by#{@photo.user.name}", user_path(@photo.user_id), class: :photo__user %>
+      <% if user_signed_in? && current_user.id == @photo.user_id %>
+        <div class="photo__manage">
+          <%= link_to "編集する", edit_photo_path(@photo[:id]), class: :photo__btn %>
+          <%= link_to "削除する", photo_path(@photo[:id]), :method => :delete ,class: :photo__btn %>
+        </div>
+      <%end%>
+      <div class="photo__image">
+        <%= image_tag @photo.image %>
+      </div>
+      <div class="photo__body">
+        <div class="photo__detail">
+          <p class="detail__title">説明</p>
+          <p class="detail__message">
+            <%= @photo.describe %>
+          </p>
+        </div>
+      </div>
+      <div class="photo__comments">
+        <% if user_signed_in? %>
+          <%= form_with model:[@photo, @comment], local: true do |f| %>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %> 
+        <%end%>
+        <ul class="comments_lists">
+         <%if @comments %>
+           <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.text %>
+              <%= link_to comment.user.name, "/users/#{comment.user_id}" , class: :comment_user %>
+            </li> 
+           <%end%>  
+         <%end%> 
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
