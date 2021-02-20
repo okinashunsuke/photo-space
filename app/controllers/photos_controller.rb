@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   
 
   def index
-    @photos = Photo.all
+    @photos = Photo.group(:user_id)
   
   end
 
