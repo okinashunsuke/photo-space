@@ -1,5 +1,6 @@
+<div class="size">
 <div class="card">
-  <%= link_to image_tag(photo.image , class: :card_img ),  user_path(photo.user.id)%>
+  <%= link_to image_tag(photo.image , class: :card_img ),  user_path(photo.user.id)%></div>
   <div class="card__body">
     <%= link_to photo.title, user_path(photo.user.id), class: :card__title%>
     <p class="card__summary">
@@ -8,7 +9,3 @@
      <%= link_to "by#{photo.user.name}", user_path(photo.user.id), class: :card__user %>
   </div>
 </div>
-
-
-
-

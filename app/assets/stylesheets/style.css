@@ -14,9 +14,11 @@ div {
   padding: 0;
 }
 
+
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
+  position: relative;
 }
 
 li {
@@ -134,20 +136,49 @@ a {
   min-height: calc(100vh - 161px);
 }
 .card {
+  height: 70%;
+  border: 1px solid black;
+  max-height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__body{
+  align-items: end;
+}
+
+.size{
   width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
 }
-.card__img {
-  margin-bottom: 16px;
+
+.card_img {
+  height: 100％;
 }
+
+.card__body{
+  
+  bottom: 0px;
+
+}
+
 .card__title {
   display: block;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
+  height: 10%;
+  margin-top: 10px;
 }
 .card__summary {
   font-size: 16px;
+  margin-bottom: 8px;
+  height: 10%;
 }
 .card__user {
   display: block;
@@ -155,6 +186,8 @@ a {
   color: #999;
   text-align: right;
   text-decoration: underline;
+
+  height: 10%;
 }
 
 
@@ -261,12 +294,17 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  height: 550px;
 }
-
 
 .footer {
   background-color: #999;
   padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
 }
 .copyright {
   text-align: center;
