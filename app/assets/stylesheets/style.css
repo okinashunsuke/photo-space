@@ -137,7 +137,7 @@ a {
 }
 .card {
   height: 70%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   max-height: 70%;
   display: flex;
   flex-wrap: wrap;
@@ -159,6 +159,7 @@ a {
 
 .card_img {
   height: 100％;
+  /* border: 1px solid black; */
 }
 
 .card__body{
