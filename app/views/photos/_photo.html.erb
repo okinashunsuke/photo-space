@@ -2,7 +2,7 @@
 <div class="card">
   <%= link_to image_tag(photo.image , class: :card_img ),  user_path(photo.user.id)%></div>
   <div class="card__body">
-    <%= link_to "#{photo.user.name}のPhoto", user_path(photo.user.id), class: :card__title%>
+    <%= link_to "#{photo.user.name}のフォト", user_path(photo.user.id), class: :card__title%>
     <%# <p class="card__summary">
      <%= photo.describe %>
     <%# </p>
